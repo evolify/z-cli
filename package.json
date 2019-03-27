@@ -1,0 +1,18 @@
+{
+  "name": "@evolify/cli",
+  "version": "0.1.0",
+  "main": "index.js",
+  "bin": {
+    "z": "bin/cli.js"
+  },
+  "repository": "git@github.com:evolify/z-cli.git",
+  "author": "孤狼 <wolf@evolify.cn>",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.19.0",
+    "execa": "^1.0.0",
+    "fs-extra": "^7.0.1",
+    "inquirer": "^6.2.1",
+    "signale": "^1.3.0"
+  }
+}
