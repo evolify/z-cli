@@ -1,14 +1,14 @@
 # web-cli
-A cli to create web app.
+An awesome cli.
 
 * ### install
 
-  `npm i -g @evolify/web-cli`
+  `npm i -g @evolify/cli`
 
-* ### create react app:
+* ### usage
 
   ```shell
-  web react <app-name>
+  z create <app-name>
   cd <app-name>
   yarn dev	# default run at 8080 port
   ```
