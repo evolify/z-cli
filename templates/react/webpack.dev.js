@@ -1,9 +1,10 @@
-const config = require('./webpack.js')
+let config = require('./webpack.js')(false)
 
-module.exports = {
-  ...config,
-  devServer: {
-    contentBase: './build/',
-    publicPath: ''
-  }
+config.devServer = {
+  contentBase: './build/',
+  hot: true,
+  publicPath: '',
+  open: true,
 }
+
+module.exports = config

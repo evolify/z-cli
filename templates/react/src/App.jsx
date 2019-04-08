@@ -1,15 +1,23 @@
 import React from 'react'
+import { hot } from 'react-hot-loader/root'
+import './app.css'
 
-export default class App extends React.Component{
-  state={
-    num: 0
-  }
-  render(){
-    return(
-      <div onClick={()=>this.setState({num: this.state.num+1})}>
-        <input type="text" value={this.state.num}/>
-        hello web-azzz!
-      </div>
-    )
-  }
+function App() {
+  return (
+    <div className='root' onClick={() => this.setState({ num: this.state.num + 1 })}>
+      
+      Hello World.
+
+      <style jsx>{`
+        .root{
+          margin-top: 20vh;
+          width: 100;
+          font-size: 40px;
+          text-align: center;
+        }
+      `}</style>
+    </div>
+  )
 }
+
+export default hot(App)
