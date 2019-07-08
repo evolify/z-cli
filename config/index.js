@@ -13,7 +13,9 @@ module.exports = {
     RemoteTemplate: 1,
     LocalTemplate: 2,
     Custom: 3,
+    GitRepository: 4
   }),
   local_tmpl,
   remote_tmpl,
+  ConfigurationGist: '7cd821892c5adc1599324efda73ab995'
 }

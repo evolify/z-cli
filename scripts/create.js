@@ -6,7 +6,7 @@ const FileUtils = require('./utils/FileUtils')
 const shell = require('./utils/ShellUtils')
 const git = require('./utils/GitUtils')
 const { SourceType } = require('../config')
-const createFromRemoteTmpl = require('./from_remote_tmpl')
+const { fromTemplate, fromGit } = require('./from_remote_tmpl')
 const createFromLocalTmpl = require('./from_local_tmpl')
 
 module.exports = async function create(name, opt) {
@@ -17,6 +17,7 @@ module.exports = async function create(name, opt) {
     choices: [
       { name: 'from template repository', value: SourceType.RemoteTemplate },
       { name: 'from built-in template', value: SourceType.LocalTemplate },
+      { name: 'from custom git repository', value: SourceType.GitRepository },
       {
         name: 'custom',
         value: SourceType.Custom,
@@ -24,14 +25,17 @@ module.exports = async function create(name, opt) {
       }
     ]
   }])
-  switch (res.source){
+  switch (res.source) {
     case SourceType.RemoteTemplate:
-      createFromRemoteTmpl(name, opt)
+      fromTemplate(name, opt)
       break;
     case SourceType.LocalTemplate:
       createFromLocalTmpl(name, opt)
       break;
-    default: 
+    case SourceType.GitRepository:
+      fromGit(name, opt)
+      break
+    default:
       signale.fatal('Params error!')
   }
 }

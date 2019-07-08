@@ -2,7 +2,6 @@
 const program = require('commander')
 const path = require('path')
 const pkg = require('../package.json')
-const react = require('../scripts/react')
 const create = require('../scripts/create')
 const serve = require('../scripts/serve/react/serve')
 
