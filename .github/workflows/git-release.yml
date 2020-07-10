@@ -12,7 +12,7 @@ jobs:
   create-release:
     runs-on: ubuntu-latest
     steps:
-      - uses: MontyD/package-json-updated-action
+      - uses: MontyD/package-json-updated-action@master
         id: version-updated
         with:
           path: package.json
